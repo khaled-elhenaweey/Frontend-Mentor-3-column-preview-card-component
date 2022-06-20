@@ -1,0 +1,155 @@
+// style variables
+$orange: hsl(31, 77%, 52%);
+$cyan: hsl(184, 100%, 22%);
+$dark-cyan: hsl(179, 100%, 13%);
+$light-gray: hsla(0, 0%, 100%, 0.75);
+$gray:hsl(0, 0%, 95%);
+// font 
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: $gray;
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+// file data 
+.attribution {
+  font-size: 12px;
+  text-align: center;
+  background-color: $cyan;
+  color: $gray;
+  padding: 8px 0;
+
+  a {
+    color: $orange;
+    font-weight: 700;
+  }
+}
+
+// challenge section
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(auto, 1fr);
+  grid-template-areas:
+    ". . c1 c1 c2 c2 c3 c3 . .";
+  justify-content: center;
+  align-items: center;
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 400px;
+    padding: 40px;
+
+    img {
+      width: 64px
+    }
+
+    .title {
+      font-family: 'Big Shoulders Display', cursive;
+      font-size: 40px;
+      font-weight: 700;
+      color: $gray;
+      text-transform: uppercase;
+    }
+
+    .info {
+      max-width: 212px;
+      line-height: 24px;
+      font-size: 15px;
+      font-weight: 400;
+      color: $light-gray;
+    }
+
+    .learn-more {
+      background-color: $gray;
+      padding: 18px 48px;
+      border-radius: 28px;
+      border: 2px solid transparent;
+      text-decoration: none;
+
+      &:hover,
+      &:active {
+        background-color: transparent;
+        color: $gray;
+        border: 2px solid $gray;
+      }
+    }
+  }
+
+  .card-1 {
+    grid-area: c1;
+    background-color: $orange;
+    border-radius: 8px 0 0 8px;
+
+    .learn-more {
+      color: $orange;
+    }
+  }
+
+  .card-2 {
+    grid-area: c2;
+    background-color: $cyan;
+
+    .learn-more {
+      color: $cyan;
+    }
+  }
+
+  .card-3 {
+    grid-area: c3;
+    background-color: $dark-cyan;
+    border-radius: 0 8px 8px 0;
+
+    .learn-more {
+      color: $dark-cyan;
+    }
+  }
+}
+
+// mobile view
+@media screen and (max-width: 376px) {
+  body {
+    height: 100%;
+  }
+
+  .container {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+    grid-template-areas:
+      ". c1 c1 c1 c1 c1 c1 c1 c1 c1 c1 ."
+      ". c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 ."
+      ". c3 c3 c3 c3 c3 c3 c3 c3 c3 c3 .";
+    margin: 40px 0;
+
+    .card {
+      height: 360px;
+      padding: 24px;
+
+      .title {
+        font-size: 32px;
+      }
+
+      .info {
+        max-width: 100%;
+        line-height: 24px;
+      }
+    }
+
+    .card-1 {
+      border-radius: 4px 4px 0 0;
+    }
+
+    .card-3 {
+      border-radius: 0 0 4px 4px;
+    }
+  }
+}

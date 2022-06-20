@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100vh;
+  background-color: #f2f2f2;
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+.attribution {
+  font-size: 12px;
+  text-align: center;
+  background-color: #006970;
+  color: #f2f2f2;
+  padding: 8px 0;
+}
+
+.attribution a {
+  color: #e38826;
+  font-weight: 700;
+}
+
+.container {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[10];
+      grid-template-columns: repeat(10, 1fr);
+  -ms-grid-rows: (1fr)[auto];
+      grid-template-rows: repeat(auto, 1fr);
+      grid-template-areas: ". . c1 c1 c2 c2 c3 c3 . .";
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  height: 400px;
+  padding: 40px;
+}
+
+.container .card img {
+  width: 64px;
+}
+
+.container .card .title {
+  font-family: 'Big Shoulders Display', cursive;
+  font-size: 40px;
+  font-weight: 700;
+  color: #f2f2f2;
+  text-transform: uppercase;
+}
+
+.container .card .info {
+  max-width: 212px;
+  line-height: 24px;
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.container .card .learn-more {
+  background-color: #f2f2f2;
+  padding: 18px 48px;
+  border-radius: 28px;
+  border: 2px solid transparent;
+  text-decoration: none;
+}
+
+.container .card .learn-more:hover, .container .card .learn-more:active {
+  background-color: transparent;
+  color: #f2f2f2;
+  border: 2px solid #f2f2f2;
+}
+
+.container .card-1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: c1;
+  background-color: #e38826;
+  border-radius: 8px 0 0 8px;
+}
+
+.container .card-1 .learn-more {
+  color: #e38826;
+}
+
+.container .card-2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 2;
+  grid-area: c2;
+  background-color: #006970;
+}
+
+.container .card-2 .learn-more {
+  color: #006970;
+}
+
+.container .card-3 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 7;
+  -ms-grid-column-span: 2;
+  grid-area: c3;
+  background-color: #004241;
+  border-radius: 0 8px 8px 0;
+}
+
+.container .card-3 .learn-more {
+  color: #004241;
+}
+
+@media screen and (max-width: 376px) {
+  body {
+    height: 100%;
+  }
+  .container {
+    -ms-grid-columns: (1fr)[12];
+        grid-template-columns: repeat(12, 1fr);
+    -ms-grid-rows: (1fr)[auto];
+        grid-template-rows: repeat(auto, 1fr);
+        grid-template-areas: ". c1 c1 c1 c1 c1 c1 c1 c1 c1 c1 ." ". c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 ." ". c3 c3 c3 c3 c3 c3 c3 c3 c3 c3 .";
+    margin: 40px 0;
+  }
+  .container .card {
+    height: 360px;
+    padding: 24px;
+  }
+  .container .card .title {
+    font-size: 32px;
+  }
+  .container .card .info {
+    max-width: 100%;
+    line-height: 24px;
+  }
+  .container .card-1 {
+    border-radius: 4px 4px 0 0;
+  }
+  .container .card-3 {
+    border-radius: 0 0 4px 4px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
